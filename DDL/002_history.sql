@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS idxstock.history;
+
 CREATE TABLE
 	IF NOT EXISTS idxstock.history (
 		code VARCHAR(10) NOT NULL,
