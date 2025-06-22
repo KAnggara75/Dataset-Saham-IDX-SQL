@@ -39,3 +39,5 @@ Anda dapat membaca lisensi di [sini](LICENSE.md). Rangkuman pendek dari lisensi 
 ## Jajan?
 
 Kalau dataset ini membantu Anda dalam pekerjaan, penelitian, atau apapun itu, mungkin boleh beliin saya jajan biar makin sering update? [https://trakteer.id/KAnggara75](https://trakteer.id/KAnggara75/tip) 😅✌️
+
+[Stock List](https://www.idx.co.id/en/market-data/stocks-data/stock-list/)
