@@ -1,7 +1,12 @@
 #!/bin/bash
 
-search_dir=csv2sql
+search_dir=history_tmp
+output_dir="history"
+source_dir="shm"
 filename=
+
+db_schema="idxstock"
+db_table="history"
 
 abort() {
 	echo "$@"
@@ -9,7 +14,7 @@ abort() {
 }
 
 copy_file() {
-	cp ./Saham/*.csv ./csv2sql/
+	cp ./$source_dir/*.csv ./$search_dir/
 }
 
 read_all_file() {
@@ -32,25 +37,26 @@ read_all_file() {
 		# Remove coma symbol on last line
 		sed -i='' -e '$s/,$//' "$filename"
 		# add INSERT (column... in first Line
-		sed -i='' -e '1s/^/INSERT INTO history (code, /' "$filename"
+		sed -i='' -e "1s/^/INSERT INTO $db_schema.$db_table (code,/" "$filename"
 		# add ) VALUES in first Line
 		sed -i='' -e '1s/$/) VALUES/' "$filename"
 
-		mv $search_dir/"$old_filename" ./sql_dump/"$new_filename".sql
+		mv $search_dir/"$old_filename" ./$output_dir/"$new_filename".sql
 	done
 }
 
 main() {
 	clear
 	pwd
-	mkdir -p csv2sql
-	rm -rf sql_dump
-	mkdir -p sql_dump
+
+	mkdir -p "$search_dir"
+	rm -rf "$output_dir"
+	mkdir -p "$output_dir"
 
 	copy_file
 	read_all_file
 
-	rm -rf csv2sql
+	rm -rf "$search_dir"
 }
 
 main || abort "Compose Error!"
