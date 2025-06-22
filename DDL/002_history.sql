@@ -29,7 +29,8 @@ CREATE TABLE
 		non_regular_value NUMERIC,
 		non_regular_frequency NUMERIC,
 		last_modified TIMESTAMPTZ NOT NULL DEFAULT now (),
-		PRIMARY KEY (code, date)
+		PRIMARY KEY (code, date),
+		CONSTRAINT fk_history_stock_code FOREIGN KEY (code) REFERENCES idxstock.stocks (code) ON UPDATE CASCADE ON DELETE CASCADE
 	);
 
 CREATE INDEX IF NOT EXISTS idx_history_code_like ON idxstock.history (code text_pattern_ops);
