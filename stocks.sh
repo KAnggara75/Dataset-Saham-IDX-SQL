@@ -1,7 +1,7 @@
 #!/bin/bash
 
 url="https://raw.githubusercontent.com/KAnggara75/Dataset-Saham-IDX/refs/heads/master/List%20Emiten/all.csv"
-output="stocks.sql"
+output="SQL/stocks.sql"
 schema="idxstock"
 table="stocks"
 
