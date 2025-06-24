@@ -1,5 +1,5 @@
-insert into idxstock.stocks (code, name, listing_date, delisting_date, shares, board)
-values ('AADI', 'Adaro Andalan Indonesia Tbk.', '2024-12-05', null, 7786891760, 'Utama'),
+INSERT INTO idxstock.stocks (code, name, listing_date, delisting_date, shares, board)
+VALUES ('AADI', 'Adaro Andalan Indonesia Tbk.', '2024-12-05', null, 7786891760, 'Utama'),
        ('AALI', 'Astra Agro Lestari Tbk.', '1997-12-09', null, 1924688333, 'Utama'),
        ('ABBA', 'Mahaka Media Tbk.', '2002-04-03', null, 3935892857, 'Pemantauan Khusus'),
        ('ABDA', 'Asuransi Bina Dana Arta Tbk.', '1989-07-06', null, 620806680, 'Pemantauan Khusus'),
@@ -752,7 +752,7 @@ values ('AADI', 'Adaro Andalan Indonesia Tbk.', '2024-12-05', null, 7786891760, 
        ('RIGS', 'Rig Tenders Indonesia Tbk.', '1990-03-05', null, 609130000, 'Pengembangan'),
        ('RIMO', 'Rimo International Lestari Tbk', '2000-11-10', null, 45080600000, 'Pemantauan Khusus'),
        ('RISE', 'Jaya Sukses Makmur Sentosa Tbk', '2018-07-09', null, 10945000000, 'Pengembangan'),
-       ('RMBA', 'PT Bentoel Internasional Investama Tbk', '1990-03-05', '2024-01-16', 36401136250, 'Utama'),
+       ('RMBA', 'PT Bentoel Internasional Investama Tbk', '1990-03-05', '2024-01-16', 36401136250, 'Pemantauan Khusus'),
        ('RMKE', 'RMK Energy Tbk.', '2021-12-07', null, 4375000000, 'Utama'),
        ('RMKO', 'Royaltama Mulia Kontraktorindo', '2023-07-31', null, 1250000000, 'Pengembangan'),
        ('ROCK', 'Rockfields Properti Indonesia ', '2020-09-10', null, 1435185100, 'Pemantauan Khusus'),
