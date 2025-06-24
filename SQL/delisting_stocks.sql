@@ -1,0 +1,16 @@
+INSERT INTO idxstock.stocks (code, name, listing_date, delisting_date, shares, board)
+VALUES ('FINN', 'First Indo American Leasing Tbk.', '2019-07-29', '2021-03-02', 2188500000, 'Pengembangan'),
+       ('CNTB', 'PT Century Textile Industry Tbk – Saham Seri B', '2000-12-22', null, 130000000, 'Pemantauan Khusus'),
+       ('TURI', 'PT Tunas Ridean Tbk.', '2000-12-22', '2023-04-06', 5580000000, 'Utama'),
+       ('GOTOM', 'MVS GOTO GOJEK TOKOPEDIA Tbk', '2024-11-13', null, 50571730000, 'Pengembangan'),
+       ('MAMIP', 'Mas Murni Indonesia Tbk', '2020-04-20', '2025-07-21', 6000000, 'Pemantauan Khusus'),
+       ('MYRXP', 'HANSON INTERNATIONAL Tbk', '2020-01-16', '2025-07-21', 1120995000, 'Pemantauan Khusus'),
+       ('RMBA', 'PT Bentoel Internasional Investama Tbk', '1990-03-05', '2024-01-16', 36401136250, 'Utama'),
+       ('MAMI', 'Mas Murni Indonesia Tbk', '1994-02-09', '2025-07-21', 12305317590, 'Pemantauan Khusus'),
+       ('FORZ', 'Forza Land Indonesia Tbk.', '2017-04-28', '2025-07-21', 1984009887, 'Pemantauan Khusus'),
+       ('MYRX', 'Hanson International Tbk.', '1990-10-31', '2025-07-21', 86703220792, 'Pemantauan Khusus'),
+       ('KRAH', 'Grand Kartech Tbk.', '2013-11-08', '2025-07-21', 971190000, 'Pemantauan Khusus'),
+       ('KPAS', 'Cottonindo Ariesta Tbk.', '2018-10-05', '2025-07-21', 768043253, 'Pemantauan Khusus'),
+       ('KPAL', 'Steadfast Marine Tbk.', '2018-06-08', '2025-07-21', 1069009400, 'Pemantauan Khusus'),
+       ('PRAS', 'Prima Alloy Steel Universal Tb', '1990-07-12', '2025-07-21', 701043478, 'Pemantauan Khusus'),
+       ('NIPS', 'Nipress Tbk.', '1991-07-24', '2025-07-21', 1635333332, 'Pemantauan Khusus');
