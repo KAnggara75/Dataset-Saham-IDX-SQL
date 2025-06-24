@@ -35,4 +35,6 @@ CREATE TABLE
 
 CREATE INDEX IF NOT EXISTS idx_history_code_like ON idxstock.history (code text_pattern_ops);
 
+CREATE INDEX IF NOT EXISTS idx_history_code_fk ON idxstock.history (code);
+
 CREATE INDEX IF NOT EXISTS idx_history_date ON idxstock.history (date);

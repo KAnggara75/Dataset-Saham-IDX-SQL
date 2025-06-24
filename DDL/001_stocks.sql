@@ -1,8 +1,10 @@
+DROP TABLE IF EXISTS idxstock.stocks CASCADE;
+
 CREATE TABLE
 	IF NOT EXISTS idxstock.stocks (
 		code VARCHAR(10) NOT NULL,
 		name VARCHAR(200) NOT NULL,
-		listing_date DATE,
+		listing_date DATE NOT NULL,
 		delisting_date DATE,
 		shares BIGINT NOT NULL,
 		board idxstock.board NOT NULL DEFAULT 'Utama',
