@@ -7,7 +7,7 @@ CREATE TABLE
 		listing_date DATE NOT NULL,
 		delisting_date DATE,
 		shares BIGINT NOT NULL,
-		board idxstock.board NOT NULL DEFAULT 'Utama',
+		board idxstock.board NOT NULL DEFAULT 'Main',
 		last_modified TIMESTAMPTZ NOT NULL DEFAULT now (),
 		PRIMARY KEY (code),
 		CONSTRAINT unique_code_name UNIQUE (code, name)
