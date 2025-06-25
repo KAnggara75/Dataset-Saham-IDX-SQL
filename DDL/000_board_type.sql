@@ -1,11 +1,13 @@
+DROP TYPE IF EXISTS idxstock.board CASCADE;
+
 CREATE TYPE idxstock.board AS ENUM (
-	'Pemantauan Khusus',
-	'Utama',
-	'Pengembangan',
-	'Akselerasi',
-	'Ekonomi Baru',
-	'A_SERIES',
-	'B_SERIES',
-	'C_SERIES',
-	'PREFEREN'
+    'Ekonomi Baru',
+    'Acceleration',
+    'Development',
+    'Main',
+    'Watchlist',
+    'A_SERIES',
+    'B_SERIES',
+    'C_SERIES',
+    'PREFEREN'
 );
