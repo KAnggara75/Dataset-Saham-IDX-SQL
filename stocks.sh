@@ -5,6 +5,8 @@ output="SQL/stocks.sql"
 schema="idxstock"
 table="stocks"
 
+mkdir -p SQL
+
 cat <<EOF >"$output"
 INSERT INTO $schema.$table (code, name, listing_date, shares, board) VALUES
 EOF
@@ -12,8 +14,18 @@ EOF
 curl -sL "$url" | tail -n +2 | while IFS=',' read -r code name listingDate shares listingBoard; do
 	date_formatted=$(echo "$listingDate" | sed 's/T.*//')
 	shares_formatted=$(echo "$shares" | sed 's/\.0$//')
-	echo "('$code', '$name', '$date_formatted', $shares_formatted, '$listingBoard')," >>"$output"
-	echo "Processed: $code - $name"
+
+	case "$listingBoard" in
+	"Utama") board_enum="Main" ;;
+	"Ekonomi Baru") board_enum="Ekonomi Baru" ;;
+	"Akselerasi") board_enum="Acceleration" ;;
+	"Pengembangan") board_enum="Development" ;;
+	"Pemantauan Khusus") board_enum="Watchlist" ;;
+	*) board_enum="$listingBoard" ;;
+	esac
+
+	echo "('$code', '$name', '$date_formatted', $shares_formatted, '$board_enum')," >>"$output"
+	echo "Processed: $code - $name ($board_enum)"
 done
 
 sed -i '' -e '$ s/,$/;/' "$output"
