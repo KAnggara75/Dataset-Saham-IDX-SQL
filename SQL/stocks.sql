@@ -941,4 +941,10 @@ VALUES ('AALI', 'Astra Agro Lestari Tbk.', '1997-12-09', 1924688333, 'Main'),
        ('SBAT', 'Sejahtera Bintang Abadi Textil', '2020-04-08', 4752982378, 'Watchlist'),
        ('KBAG', 'Karya Bersama Anugerah Tbk.', '2020-04-08', 7150002603, 'Watchlist'),
        ('CBMF', 'Cahaya Bintang Medan Tbk.', '2020-04-09', 1875000000, 'Watchlist'),
-       ('RONY', 'Aesler Grup Internasional Tbk.', '2020-04-09', 1250000000, 'Development');
+       ('RONY', 'Aesler Grup Internasional Tbk.', '2020-04-09', 1250000000, 'Development')
+ON CONFLICT ("code") DO UPDATE SET "name"=excluded."name",
+                                   "listing_date"=excluded."listing_date",
+                                   "delisting_date"=excluded."delisting_date",
+                                   "shares"=excluded."shares",
+                                   "board"=excluded."board",
+                                   "last_modified"=excluded."last_modified";
