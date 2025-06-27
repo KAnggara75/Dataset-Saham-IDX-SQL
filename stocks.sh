@@ -7,11 +7,18 @@ table="stocks"
 
 mkdir -p SQL
 
+SKIP_CODES="FINN FORZ KPAL KPAS KRAH MAMI MAMIP MYRX MYRXP NIPS PRAS RMBA TURI"
+
 cat <<EOF >"$output"
 INSERT INTO $schema.$table (code, name, listing_date, shares, board) VALUES
 EOF
 
 curl -sL "$url" | tail -n +2 | while IFS=',' read -r code name listingDate shares listingBoard; do
+	if [[ " $SKIP_CODES " == *" $code "* ]]; then
+		echo "SKIPPED: $code - $name"
+		continue
+	fi
+
 	date_formatted=$(echo "$listingDate" | sed 's/T.*//')
 	shares_formatted=$(echo "$shares" | sed 's/\.0$//')
 
