@@ -11,4 +11,10 @@ VALUES ('FINN', 'First Indo American Leasing Tbk.', '2019-07-29', '2021-03-02', 
        ('NIPS', 'Nipress Tbk.', '1991-07-24', '2025-07-21', 1635333332, 'Watchlist'),
        ('PRAS', 'Prima Alloy Steel Universal Tb', '1990-07-12', '2025-07-21', 701043478, 'Watchlist'),
        ('RMBA', 'PT Bentoel Internasional Investama Tbk', '1990-03-05', '2024-01-16', 36401136250, 'Main'),
-       ('TURI', 'PT Tunas Ridean Tbk.', '2000-12-22', '2023-04-06', 5580000000, 'Main');
+       ('TURI', 'PT Tunas Ridean Tbk.', '2000-12-22', '2023-04-06', 5580000000, 'Main')
+ON CONFLICT ("code") DO UPDATE SET "name"           = "excluded"."name",
+                                   "listing_date"   = "excluded"."listing_date",
+                                   "delisting_date" = "excluded"."delisting_date",
+                                   "shares"         = "excluded"."shares",
+                                   "board"          = "excluded"."board",
+                                   "last_modified"  = "excluded"."last_modified";
