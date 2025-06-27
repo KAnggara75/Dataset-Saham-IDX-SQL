@@ -35,6 +35,16 @@ curl -sL "$url" | tail -n +2 | while IFS=',' read -r code name listingDate share
 	echo "Processed: $code - $name ($board_enum)"
 done
 
-sed -i '' -e '$ s/,$/;/' "$output"
+sed -i '' -e '$ s/,$//' "$output"
+
+cat <<'EOF' >>"$output"
+ON CONFLICT ("code")
+    DO UPDATE SET "name"=excluded."name",
+                  "listing_date"=excluded."listing_date",
+                  "delisting_date"=excluded."delisting_date",
+                  "shares"=excluded."shares",
+                  "board"=excluded."board",
+                  "last_modified"=excluded."last_modified";
+EOF
 
 echo "Done! SQL saved as $output"
